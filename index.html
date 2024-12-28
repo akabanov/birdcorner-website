@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SneakyBird Apps - Be Smarter</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/icon-48.png">
+    <link rel="apple-touch-icon" href="/assets/icon-192.png">
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .float-animation:hover {
+            animation: float 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="py-4 px-6 bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <div class="text-xl font-bold text-gray-800">SneakyBird Apps</div>
+        <div>
+            <!--            <a href="#about" class="text-gray-600 hover:text-gray-800 mx-4">About</a>-->
+            <a href="#apps" class="text-gray-600 hover:text-gray-800 mx-4">Apps</a>
+            <!--            <a href="#contact" class="text-gray-600 hover:text-gray-800 mx-4">Contact</a>-->
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="min-h-screen flex items-center justify-center">
+    <div class="text-center px-4">
+        <!-- Replace with your generated bird logo -->
+        <img src="assets/icon-512.png" alt="SneakyBird Logo" class="w-96 h-96 mx-auto mb-8 float-animation">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Brilliance Made Simple</h1>
+        <p class="text-xl text-gray-600 mb-8">Mobile apps for lifelong learners</p>
+        <div class="space-x-4">
+            <!-- Coming Soon Badge -->
+            <span class="inline-flex items-center px-4 py-2 bg-green-100 text-purple-800 rounded-full">
+                    Coming Soon to App and Play Store
+                </span>
+        </div>
+    </div>
+</div>
+
+<!-- Apps Preview Section -->
+<section id="apps" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Apps</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Memory & Learning -->
+            <div class="p-6 bg-gray-50 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Memory & Learning</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li>Numbers Memorization</li>
+                    <li>Cards Memory Trainer</li>
+                </ul>
+            </div>
+
+            <!-- Personal Growth -->
+            <div class="p-6 bg-gray-50 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Personal Growth</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li>Focus Timer</li>
+                    <li>Kaizen Questions</li>
+                </ul>
+            </div>
+
+            <!-- Social Tools -->
+            <div class="p-6 bg-gray-50 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Social Tools</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li>Smart Wishlist</li>
+                    <li>Friends Keeper</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-xl mx-auto px-4 text-center">
+        <h2 class="text-2xl font-bold mb-8">Stay Updated</h2>
+        <form class="space-y-4">
+            <input type="email" placeholder="Enter your email"
+                   class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-purple-500">
+            <button class="w-full px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+                Notify me when apps launch
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-8 bg-white">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        <p class="text-gray-600">© 2024 SneakyBird Apps | Mobile apps for lifelong learners</p>
+        <!--        <div class="mt-4 space-x-4">-->
+        <!--            <a href="#" class="text-gray-500 hover:text-gray-700">Twitter</a>-->
+        <!--            <a href="#" class="text-gray-500 hover:text-gray-700">Medium</a>-->
+        <!--            <a href="#" class="text-gray-500 hover:text-gray-700">Contact</a>-->
+        <!--        </div>-->
+    </div>
+</footer>
+</body>
+</html>
