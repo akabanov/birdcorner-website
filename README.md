@@ -1,1 +1,1 @@
-https://skeakybird.app website
+https://sneakybird.app website
