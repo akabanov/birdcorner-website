@@ -261,6 +261,48 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
+            <!-- MemoNumbers -->
+            <div class="card p-6 rounded-xl flex flex-col h-full">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-pink-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold" style="color: var(--text-main);">MemoNumbers</h3>
+                </div>
+                <p class="mb-6 flex-grow" style="color: var(--text-muted);">
+                    Master the art of remembering long numbers.
+                    Remember all your CCs, PINs, phones, prices, and more with ease.
+                </p>
+                <button class="btn-primary w-full py-2 rounded-lg font-medium" onclick="openModal('digits')">
+                    Notify me
+                </button>
+            </div>
+
+            <!-- MemoCards -->
+            <div class="card p-6 rounded-xl flex flex-col h-full">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-blue-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold" style="color: var(--text-main);">MemoCards</h3>
+                </div>
+                <p class="mb-6 flex-grow" style="color: var(--text-muted);">
+                    Learn to memorize a shuffled deck of cards.
+                    A classic memory feat made accessible through step-by-step practice.
+                </p>
+                <button class="btn-primary w-full py-2 rounded-lg font-medium" onclick="openModal('cards')">
+                    Notify me
+                </button>
+            </div>
+
             <!-- Friends keeper -->
             <div class="card p-6 rounded-xl flex flex-col h-full">
                 <div class="flex items-center mb-4">
@@ -274,52 +316,10 @@
                     <h3 class="text-xl font-bold" style="color: var(--text-main);">Friends keeper</h3>
                 </div>
                 <p class="mb-6 flex-grow" style="color: var(--text-muted);">
-                    Your pocket friendship mentor and assistant.
+                    Your pocket friendship assistant.
                     Learn to connect better with people you care about.
                 </p>
                 <button class="btn-primary w-full py-2 rounded-lg font-medium" onclick="openModal('friends')">
-                    Notify me
-                </button>
-            </div>
-
-            <!-- Recall:digits -->
-            <div class="card p-6 rounded-xl flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-pink-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold" style="color: var(--text-main);">Recall:digits</h3>
-                </div>
-                <p class="mb-6 flex-grow" style="color: var(--text-muted);">
-                    Master the art of remembering long numbers.
-                    Remember all your CCs, PINs, phones, prices, and more with ease.
-                </p>
-                <button class="btn-primary w-full py-2 rounded-lg font-medium" onclick="openModal('digits')">
-                    Notify me
-                </button>
-            </div>
-
-            <!-- Recall:cards -->
-            <div class="card p-6 rounded-xl flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-blue-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold" style="color: var(--text-main);">Recall:cards</h3>
-                </div>
-                <p class="mb-6 flex-grow" style="color: var(--text-muted);">
-                    Learn to memorize a shuffled deck of cards.
-                    A classic memory feat made accessible through step-by-step practice.
-                </p>
-                <button class="btn-primary w-full py-2 rounded-lg font-medium" onclick="openModal('cards')">
                     Notify me
                 </button>
             </div>
@@ -434,7 +434,7 @@
         style="border-color: var(--border-color); background-color: var(--header-bg);">
     <div class="max-w-6xl mx-auto px-4 text-center text-sm" style="color: var(--text-muted);">
         <p>&copy; <span id="year"></span>
-            Alex Kabanov / BirdCorner Apps
+            <a href="https://www.linkedin.com/in/alexander-kabanov/" target="_blank">Alexander Kabanov</a>
         </p>
         <div class="mt-2">
             <a href="privacy-policy.html" class="hover:underline" style="color: var(--primary-color);">Privacy
@@ -472,16 +472,8 @@
                         <input type="checkbox"
                                class="form-checkbox h-5 w-5 rounded border-gray-300 focus:ring-opacity-50 transition duration-150 ease-in-out"
                                style="color: var(--primary-color); border-color: var(--input-border); background-color: var(--input-bg);"
-                               name="group[35662][128]" id="check-friends">
-                        <span style="color: var(--text-main);">Friends keeper</span>
-                    </label>
-                    <label
-                            class="flex items-center space-x-3 p-2 rounded hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer">
-                        <input type="checkbox"
-                               class="form-checkbox h-5 w-5 rounded border-gray-300 focus:ring-opacity-50 transition duration-150 ease-in-out"
-                               style="color: var(--primary-color); border-color: var(--input-border); background-color: var(--input-bg);"
                                name="group[35662][1]" id="check-digits">
-                        <span style="color: var(--text-main);">Recall:digits</span>
+                        <span style="color: var(--text-main);">MemoNumbers</span>
                     </label>
                     <label
                             class="flex items-center space-x-3 p-2 rounded hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer">
@@ -489,7 +481,15 @@
                                class="form-checkbox h-5 w-5 rounded border-gray-300 focus:ring-opacity-50 transition duration-150 ease-in-out"
                                style="color: var(--primary-color); border-color: var(--input-border); background-color: var(--input-bg);"
                                name="group[35662][2]" id="check-cards">
-                        <span style="color: var(--text-main);">Recall:cards</span>
+                        <span style="color: var(--text-main);">MemoCards</span>
+                    </label>
+                    <label
+                            class="flex items-center space-x-3 p-2 rounded hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer">
+                        <input type="checkbox"
+                               class="form-checkbox h-5 w-5 rounded border-gray-300 focus:ring-opacity-50 transition duration-150 ease-in-out"
+                               style="color: var(--primary-color); border-color: var(--input-border); background-color: var(--input-bg);"
+                               name="group[35662][128]" id="check-friends">
+                        <span style="color: var(--text-main);">Friends keeper</span>
                     </label>
 <!--                    <label-->
 <!--                            class="flex items-center space-x-3 p-2 rounded hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer">-->
