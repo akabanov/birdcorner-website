@@ -268,12 +268,10 @@
             <!-- MemoNumbers -->
             <div class="card p-6 rounded-xl flex flex-col h-full">
                 <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-pink-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
-                            </path>
-                        </svg>
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-pink-500" style="background-color: white;">
+                        <div class="w-8 h-8"
+                             style="background-image: url('assets/app-icon-memonumbers-48.png'); background-size: contain; background-position: center; background-repeat: no-repeat;">
+                        </div>
                     </div>
                     <h3 class="text-xl font-bold" style="color: var(--text-main);">MemoNumbers</h3>
                 </div>
@@ -281,9 +279,8 @@
                     Master the art of remembering long numbers.
                     Remember all your CCs, PINs, phones, prices, and more with ease.
                 </p>
-                <button class="btn-primary w-full py-2 rounded-lg font-medium" onclick="openModal('digits')">
-                    Notify me
-                </button>
+                <a href="https://memonumbers.app/" target="_blank"
+                   class="btn-primary w-full py-2 rounded-lg font-medium text-center block">Learn More</a>
             </div>
 
             <!-- MemoCards -->
@@ -469,14 +466,6 @@
                     method="post" target="hidden-iframe" onsubmit="handleFormSubmit()">
                 <div class="space-y-3 mb-6 max-h-60 overflow-y-auto pr-2">
 
-                    <label
-                            class="flex items-center space-x-3 p-2 rounded hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer">
-                        <input type="checkbox"
-                               class="form-checkbox h-5 w-5 rounded border-gray-300 focus:ring-opacity-50 transition duration-150 ease-in-out"
-                               style="color: var(--primary-color); border-color: var(--input-border); background-color: var(--input-bg);"
-                               name="group[35662][1]" id="check-digits">
-                        <span style="color: var(--text-main);">MemoNumbers</span>
-                    </label>
                     <label
                             class="flex items-center space-x-3 p-2 rounded hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer">
                         <input type="checkbox"
