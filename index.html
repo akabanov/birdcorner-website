@@ -109,15 +109,10 @@
             height: 2rem;
         }
 
-        .logo-text h1 {
+        .logo-section h1 {
             font-size: 1.125rem;
             font-weight: 700;
             line-height: 1.25;
-        }
-
-        .logo-text p {
-            font-size: 0.75rem;
-            color: var(--text-muted);
         }
 
         main {
@@ -419,13 +414,33 @@
         }
 
         /* SVG Colors */
-        .text-blue-500 { color: #3b82f6; }
-        .text-teal-500 { color: #14b8a6; }
-        .text-green-500 { color: #10b981; }
-        .text-red-500 { color: #ef4444; }
-        .text-purple-500 { color: #a855f7; }
-        .text-yellow-400 { color: #fbbf24; }
-        .text-gray-600 { color: #4b5563; }
+        .text-blue-500 {
+            color: #3b82f6;
+        }
+
+        .text-teal-500 {
+            color: #14b8a6;
+        }
+
+        .text-green-500 {
+            color: #10b981;
+        }
+
+        .text-red-500 {
+            color: #ef4444;
+        }
+
+        .text-purple-500 {
+            color: #a855f7;
+        }
+
+        .text-yellow-400 {
+            color: #fbbf24;
+        }
+
+        .text-gray-600 {
+            color: #4b5563;
+        }
 
     </style>
 </head>
@@ -437,10 +452,7 @@
     <div class="container">
         <div class="logo-section">
             <img src="assets/drawing.svg" alt="BirdCorner Logo" class="logo-img" id="header-logo">
-            <div class="logo-text">
-                <h1>BirdCorner Apps</h1>
-                <p>For lifelong learners</p>
-            </div>
+            <h1>BirdCorner Apps</h1>
         </div>
 
         <!-- Theme Switcher -->
@@ -512,10 +524,10 @@
                     <h3>MemoNumbers</h3>
                 </div>
                 <p>
-                    Master the art of remembering long numbers.
+                    A practical system for number memory.
                     Remember all your CCs, PINs, phones, prices, and more with ease.
                 </p>
-                <a href="https://memonumbers.app/" target="_blank" class="btn-primary">Learn More</a>
+                <a href="https://memonumbers.app/" target="_blank" class="btn-primary">Take me there</a>
             </div>
 
             <!-- MemoCards -->
@@ -591,7 +603,8 @@
                     </div>
                     <h3>Focus</h3>
                 </div>
-                <p>Achieve deep work with a distraction-free timer. Master single-tasking and boost your productivity.</p>
+                <p>Achieve deep work with a distraction-free timer. Master single-tasking and boost your
+                    productivity.</p>
                 <a href="javascript:void(0)" class="btn-primary" onclick="openModal('focus')">
                     Waitlist
                 </a>
@@ -636,7 +649,8 @@
             <h3>Get Notified</h3>
             <button onclick="closeModal(event)" class="close-btn">
                 <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
         </div>
@@ -676,7 +690,8 @@
                 <input type="text" name="b_84a973b51103f6e1ed655285d_cedf2169b5" tabindex="-1" value="">
             </div>
 
-            <a href="javascript:void(0)" class="btn-primary" id="waitlist-submit" onclick="document.querySelector('#modal form').requestSubmit()">
+            <a href="javascript:void(0)" class="btn-primary" id="waitlist-submit"
+               onclick="document.querySelector('#modal form').requestSubmit()">
                 Waitlist
             </a>
 
