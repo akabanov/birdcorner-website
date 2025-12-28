@@ -19,156 +19,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-6264597851053551">
     <title>BirdCorner Apps - Be Smarter</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="48x48" href="assets/icon-48.png">
     <link rel="apple-touch-icon" href="assets/icon-192.png">
     <style>
         /* Theme Variables */
         :root {
-            /* Default (Bright) */
             --bg-color: #ffffff;
             --card-bg: #f3f4f6;
-            /* Gray 100 */
             --text-main: #1f2937;
-            /* Gray 800 */
             --text-muted: #4b5563;
-            /* Gray 600 */
             --primary-color: #6366f1;
-            /* Indigo 500 */
             --primary-hover: #4f46e5;
-            /* Indigo 600 */
             --header-bg: #ffffff;
             --border-color: transparent;
             --shadow-color: rgba(0, 0, 0, 0.1);
             --modal-bg: #ffffff;
             --input-bg: #ffffff;
             --input-border: #d1d5db;
-            /* Gray 300 */
             --input-text: #1f2937;
+            --header-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         }
 
         [data-theme="dark"] {
-            /* Dark Theme Overrides */
             --bg-color: #0f172a;
-            /* Slate 900 */
             --card-bg: #1e293b;
-            /* Slate 800 */
             --text-main: #e2e8f0;
-            /* Slate 200 */
             --text-muted: #94a3b8;
-            /* Slate 400 */
             --primary-color: #38bdf8;
-            /* Sky 400 */
             --primary-hover: #7dd3fc;
-            /* Sky 300 */
             --header-bg: #0f172a;
             --border-color: #334155;
-            /* Slate 700 */
             --shadow-color: rgba(0, 0, 0, 0.5);
             --modal-bg: #1e293b;
             --input-bg: #334155;
-            /* Slate 700 */
             --input-border: #475569;
-            /* Slate 600 */
             --input-text: #f1f5f9;
-            /* Slate 100 */
+            --header-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             transition: background-color 0.3s ease, color 0.3s ease;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            width: 100%;
         }
 
         header {
             background-color: var(--header-bg);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: var(--header-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 50;
             transition: background-color 0.3s ease;
         }
 
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-            /* Default for bright */
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
         }
 
-        [data-theme="dark"] .btn-primary {
-            color: #0f172a;
-            /* Dark text on bright sky blue button */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
 
-        .btn-primary {
-            transition: all 0.3s ease;
+        .logo-img {
+            width: 2rem;
+            height: 2rem;
         }
 
-        .btn-primary:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px var(--shadow-color);
+        .logo-text h1 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 3rem 0;
+        }
+
+        h2.section-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            font-variant-caps: all-small-caps;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .app-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
         .card {
             background-color: var(--card-bg);
-            transition: all 0.3s ease;
             border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            transition: all 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px var(--shadow-color);
-            border-color: var(--primary-color);
+        @media (min-width: 768px) {
+            .card {
+                width: calc(50% - 1rem);
+                max-width: 380px;
+            }
         }
 
-        .modal {
-            transition: opacity 0.3s ease;
+        @media (min-width: 1024px) {
+            .card {
+                width: calc(33.333% - 1.34rem);
+                max-width: 380px;
+            }
         }
 
-        .modal.hidden {
-            opacity: 0;
-            pointer-events: none;
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
         }
 
-        .modal:not(.hidden) {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-content {
-            background-color: var(--modal-bg);
-            color: var(--text-main);
-        }
-
-        .form-input {
-            background-color: var(--input-bg);
-            border-color: var(--input-border);
-            color: var(--input-text);
-        }
-
-        /* Theme Toggle Button */
-        .theme-toggle {
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 9999px;
-            transition: background-color 0.3s ease;
-        }
-
-        .theme-toggle:hover {
-            background-color: rgba(128, 128, 128, 0.1);
-        }
-
-        /* Icon styles */
         .app-icon {
             width: 48px;
             height: 48px;
-            border-radius: 22%; /* Squircle approximation */
+            border-radius: 22%;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             background: #ffffff;
-            border: 1px solid #e5e7eb; /* Subtle border for light mode */
+            border: 1px solid #e5e7eb;
             transition: all 0.3s ease;
             flex-shrink: 0;
+            margin-right: 1rem;
         }
 
         [data-theme="dark"] .app-icon {
@@ -193,41 +209,250 @@
             height: 80%;
         }
 
-        footer a {
-            color: var(--primary-color);
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
         }
 
-        /* Slate 700 / Sky 400 */
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
 
-        /* Specific card icon overrides for dark mode if we want to match the dark theme exactly */
-        /* We'll use CSS variables for these specific colors to make it cleaner */
+        .btn-primary {
+            display: inline-block;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        [data-theme="dark"] .btn-primary {
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px var(--shadow-color);
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            background: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(128, 128, 128, 0.1);
+        }
+
+        .theme-toggle svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .brightness-200 {
+            filter: brightness(2);
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            background-color: var(--header-bg);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer div {
+            margin-top: 0.5rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            padding: 1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: var(--modal-bg);
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            max-width: 448px;
+            overflow: hidden;
+            padding: 1.5rem;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .modal-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            color: #9ca3af;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #4b5563;
+        }
+
+        .modal-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            max-height: 240px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .option-label:hover {
+            background-color: rgba(128, 128, 128, 0.1);
+        }
+
+        .form-checkbox {
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 0.25rem;
+            border: 1px solid var(--input-border);
+            background-color: var(--input-bg);
+            cursor: pointer;
+        }
+
+        .email-input-wrapper {
+            margin-bottom: 1rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--input-border);
+            background-color: var(--input-bg);
+            color: var(--input-text);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+        }
+
+        .modal-footer-text {
+            font-size: 0.75rem;
+            text-align: center;
+            margin-top: 1rem;
+            color: var(--text-muted);
+        }
+
+        .bg-green-600 {
+            background-color: #059669 !important;
+        }
+
+        /* SVG Colors */
+        .text-blue-500 { color: #3b82f6; }
+        .text-teal-500 { color: #14b8a6; }
+        .text-green-500 { color: #10b981; }
+        .text-red-500 { color: #ef4444; }
+        .text-purple-500 { color: #a855f7; }
+        .text-yellow-400 { color: #fbbf24; }
+        .text-gray-600 { color: #4b5563; }
+
     </style>
 </head>
 
-<body class="flex flex-col min-h-screen">
+<body>
 
 <!-- Header -->
-<header class="shadow-sm sticky top-0 z-50 border-b border-transparent" style="border-color: var(--border-color);">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between space-x-4">
-        <div class="flex items-center space-x-3">
-            <img src="assets/drawing.svg" alt="BirdCorner Logo" class="w-8 h-8" id="header-logo">
-            <div class="text-left">
-                <h1 class="text-lg font-bold leading-tight" style="color: var(--text-main);">BirdCorner Apps</h1>
-                <p class="text-xs" style="color: var(--text-muted);">For lifelong learners</p>
+<header>
+    <div class="container">
+        <div class="logo-section">
+            <img src="assets/drawing.svg" alt="BirdCorner Logo" class="logo-img" id="header-logo">
+            <div class="logo-text">
+                <h1>BirdCorner Apps</h1>
+                <p>For lifelong learners</p>
             </div>
         </div>
 
         <!-- Theme Switcher -->
-        <button id="theme-toggle" class="theme-toggle ml-4" aria-label="Toggle Theme">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
             <!-- Sun Icon (for Dark Mode) -->
-            <svg id="sun-icon" class="w-6 h-6 text-yellow-400 hidden" fill="none" stroke="currentColor"
-                 viewBox="0 0 24 24">
+            <svg id="sun-icon" class="text-yellow-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
                 </path>
             </svg>
             <!-- Moon Icon (for Light Mode) -->
-            <svg id="moon-icon" class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg id="moon-icon" class="text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
                 </path>
@@ -237,219 +462,167 @@
 </header>
 
 <!-- Main Content -->
-<main class="flex-grow py-12 px-4">
-    <div class="max-w-6xl mx-auto">
-        <!-- Our Collection Section -->
-        <h2 class="text-3xl font-bold text-center mb-12" style="color: var(--text-main);">Our Collection</h2>
+<main>
+    <div class="container">
+        <h2 class="section-title">Up and Running</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div class="app-grid">
 
-            <!-- EPUB Liberator -->
-            <div class="card p-6 rounded-xl flex flex-col h-full relative overflow-hidden">
-                <div class="flex items-center mb-4">
-                    <div class="app-icon mr-4">
+            <div class="card">
+                <div class="card-header">
+                    <div class="app-icon">
                         <img src="assets/app-icon-epub-liberator-48.png" alt="EPUB Liberator Icon">
                     </div>
-                    <h3 class="text-xl font-bold" style="color: var(--text-main);">EPUB Liberator for Kobo</h3>
+                    <h3>EPUB Liberator for Kobo</h3>
                 </div>
-                <p class="mb-6 flex-grow" style="color: var(--text-muted);">
+                <p>
                     Unlock line spacing, text alignment, and font size settings in your EPUBs and read them with
                     comfort on your Kobo screen.
                 </p>
-                <a href="https://epubliberator.birdcorner.app/" target="_blank"
-                   class="btn-primary w-full py-2 rounded-lg font-medium text-center block">Open</a>
+                <a href="https://epubliberator.birdcorner.app/" target="_blank" class="btn-primary">Open</a>
             </div>
 
-            <!-- Domain Sonar -->
-            <div class="card p-6 rounded-xl flex flex-col h-full relative overflow-hidden">
-                <div class="flex items-center mb-4">
-                    <div class="app-icon mr-4">
+            <div class="card">
+                <div class="card-header">
+                    <div class="app-icon">
                         <img src="assets/app-icon-domain-sonar-48.png" alt="Domain Sonar Icon">
                     </div>
-                    <h3 class="text-xl font-bold" style="color: var(--text-main);">Domain Sonar</h3>
+                    <h3>Domain Sonar</h3>
                 </div>
-                <p class="mb-6 flex-grow" style="color: var(--text-muted);">
+                <p>
                     See if your brand or product name is already taken as a domain.
                     An essential tool for trademark research.
                 </p>
-                <a href="https://domainsonar.birdcorner.app/" target="_blank"
-                   class="btn-primary w-full py-2 rounded-lg font-medium text-center block">Open</a>
+                <a href="https://domainsonar.birdcorner.app/" target="_blank" class="btn-primary">Open</a>
             </div>
 
         </div>
 
         <!-- Coming Soon Section -->
-        <h2 class="text-3xl font-bold text-center mb-12" style="color: var(--text-main);">Coming Soon</h2>
+        <h2 class="section-title">Coming Soon</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="app-grid">
 
             <!-- MemoNumbers -->
-            <div class="card p-6 rounded-xl flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <div class="app-icon mr-4">
+            <div class="card">
+                <div class="card-header">
+                    <div class="app-icon">
                         <img src="assets/app-icon-memonumbers-48.png" alt="MemoNumbers Icon">
                     </div>
-                    <h3 class="text-xl font-bold" style="color: var(--text-main);">MemoNumbers</h3>
+                    <h3>MemoNumbers</h3>
                 </div>
-                <p class="mb-6 flex-grow" style="color: var(--text-muted);">
+                <p>
                     Master the art of remembering long numbers.
                     Remember all your CCs, PINs, phones, prices, and more with ease.
                 </p>
-                <a href="https://memonumbers.app/" target="_blank"
-                   class="btn-primary w-full py-2 rounded-lg font-medium text-center block">Learn More</a>
+                <a href="https://memonumbers.app/" target="_blank" class="btn-primary">Learn More</a>
             </div>
 
             <!-- MemoCards -->
-            <div class="card p-6 rounded-xl flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <div class="app-icon mr-4 text-blue-500">
+            <div class="card">
+                <div class="card-header">
+                    <div class="app-icon text-blue-500">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
                             </path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold" style="color: var(--text-main);">MemoCards</h3>
+                    <h3>MemoCards</h3>
                 </div>
-                <p class="mb-6 flex-grow" style="color: var(--text-muted);">
+                <p>
                     Learn to memorize a shuffled deck of cards.
                     A classic memory feat made accessible through step-by-step practice.
                 </p>
-                <button class="btn-primary w-full py-2 rounded-lg font-medium" onclick="openModal('cards')">
-                    Notify me
-                </button>
+                <a href="javascript:void(0)" class="btn-primary" onclick="openModal('cards')">
+                    Waitlist
+                </a>
             </div>
 
             <!-- Friends keeper -->
-            <div class="card p-6 rounded-xl flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <div class="app-icon app-icon-friends mr-4 text-teal-500">
+            <div class="card">
+                <div class="card-header">
+                    <div class="app-icon app-icon-friends text-teal-500">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
                             </path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold" style="color: var(--text-main);">Friends keeper</h3>
+                    <h3>Friends keeper</h3>
                 </div>
-                <p class="mb-6 flex-grow" style="color: var(--text-muted);">
+                <p>
                     Your pocket friendship assistant.
                     Learn to connect better with people you care about.
                 </p>
-                <button class="btn-primary w-full py-2 rounded-lg font-medium" onclick="openModal('friends')">
-                    Notify me
-                </button>
+                <a href="javascript:void(0)" class="btn-primary" onclick="openModal('friends')">
+                    Waitlist
+                </a>
             </div>
 
-            <!-- Recall:palace -->
-            <!--            <div class="card p-6 rounded-xl flex flex-col h-full">-->
-            <!--                <div class="flex items-center mb-4">-->
-            <!--                    <div-->
-            <!--                            class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-yellow-600">-->
-            <!--                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
-            <!--                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
-            <!--                                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">-->
-            <!--                            </path>-->
-            <!--                        </svg>-->
-            <!--                    </div>-->
-            <!--                    <h3 class="text-xl font-bold" style="color: var(&#45;&#45;text-main);">Recall:palace</h3>-->
-            <!--                </div>-->
-            <!--                <p class="mb-6 flex-grow" style="color: var(&#45;&#45;text-muted);">Construct your own memory palace. Use-->
-            <!--                    spatial memory to store and retrieve information with ease.</p>-->
-            <!--                <button class="btn-primary w-full py-2 rounded-lg font-medium" onclick="openModal('palace')">-->
-            <!--                    Notify me-->
-            <!--                </button>-->
-            <!--            </div>-->
-
             <!-- Broken metronome -->
-            <div class="card p-6 rounded-xl flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <div class="app-icon mr-4 text-green-500">
+            <div class="card">
+                <div class="card-header">
+                    <div class="app-icon text-green-500">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold" style="color: var(--text-main);">Broken metronome</h3>
+                    <h3>Broken metronome</h3>
                 </div>
-                <p class="mb-6 flex-grow" style="color: var(--text-muted);">
+                <p>
                     A metronome that misses beats, so you can perfect your timing skills.
                     Backed by neuroscience.
                 </p>
-                <button class="btn-primary w-full py-2 rounded-lg font-medium"
-                        onclick="openModal('metronome')">
-                    Notify me
-                </button>
+                <a href="javascript:void(0)" class="btn-primary" onclick="openModal('metronome')">
+                    Waitlist
+                </a>
             </div>
 
             <!-- Focus -->
-            <div class="card p-6 rounded-xl flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <div class="app-icon mr-4 text-red-500">
+            <div class="card">
+                <div class="card-header">
+                    <div class="app-icon text-red-500">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold" style="color: var(--text-main);">Focus</h3>
+                    <h3>Focus</h3>
                 </div>
-                <p class="mb-6 flex-grow" style="color: var(--text-muted);">Achieve deep work with a
-                    distraction-free timer. Master single-tasking and boost your productivity.</p>
-                <button class="btn-primary w-full py-2 rounded-lg font-medium" onclick="openModal('focus')">
-                    Notify me
-                </button>
+                <p>Achieve deep work with a distraction-free timer. Master single-tasking and boost your productivity.</p>
+                <a href="javascript:void(0)" class="btn-primary" onclick="openModal('focus')">
+                    Waitlist
+                </a>
             </div>
 
             <!-- Kaizen questions -->
-            <div class="card p-6 rounded-xl flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <div class="app-icon mr-4 text-purple-500">
+            <div class="card">
+                <div class="card-header">
+                    <div class="app-icon text-purple-500">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                  d="M8.228 9.001c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
                             </path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold" style="color: var(--text-main);">Kaizen questions</h3>
+                    <h3>Kaizen questions</h3>
                 </div>
-                <p class="mb-6 flex-grow" style="color: var(--text-muted);">Daily prompts for continuous
-                    improvement. Small questions that lead to big changes in your life.</p>
-                <button class="btn-primary w-full py-2 rounded-lg font-medium" onclick="openModal('kaizen')">
-                    Notify me
-                </button>
+                <p>Daily prompts for continuous improvement. Small questions that lead to big changes in your life.</p>
+                <a href="javascript:void(0)" class="btn-primary" onclick="openModal('kaizen')">
+                    Waitlist
+                </a>
             </div>
-
-            <!-- Wishlist -->
-            <!--            <div class="card p-6 rounded-xl flex flex-col h-full">-->
-            <!--                <div class="flex items-center mb-4">-->
-            <!--                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-pink-500">-->
-            <!--                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
-            <!--                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
-            <!--                                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">-->
-            <!--                            </path>-->
-            <!--                        </svg>-->
-            <!--                    </div>-->
-            <!--                    <h3 class="text-xl font-bold" style="color: var(&#45;&#45;text-main);">Wishlist</h3>-->
-            <!--                </div>-->
-            <!--                <p class="mb-6 flex-grow" style="color: var(&#45;&#45;text-muted);">-->
-            <!--                    Keep track of gifts you want and want to give.-->
-            <!--                    No more unwanted gifts.-->
-            <!--                    Never forget a great gift idea again.</p>-->
-            <!--                <button class="btn-primary w-full py-2 rounded-lg font-medium"-->
-            <!--                        onclick="openModal('wishlist')">-->
-            <!--                    Notify me-->
-            <!--                </button>-->
-            <!--            </div>-->
         </div>
     </div>
 </main>
 
 <!-- Footer -->
-<footer class="border-t py-8 mt-auto"
-        style="border-color: var(--border-color); background-color: var(--header-bg);">
-    <div class="max-w-6xl mx-auto px-4 text-center text-sm" style="color: var(--text-muted);">
+<footer>
+    <div class="container">
         <p>&copy; <span id="year"></span> BirdCorner Apps</p>
-        <div class="mt-2">
+        <div>
             <a href="privacy-policy.html" target="_blank">Privacy Policy</a> |
             <a href="https://www.linkedin.com/in/alexander-kabanov/" target="_blank">Contact</a>
         </div>
@@ -457,110 +630,61 @@
 </footer>
 
 <!-- Modal -->
-<div id="modal"
-     class="modal hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm p-4"
-     onclick="closeModal(event)">
-    <div class="modal-content rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all scale-100"
-         onclick="event.stopPropagation()">
-        <div class="p-6">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-2xl font-bold" style="color: var(--text-main);">Get Notified</h3>
-                <button onclick="closeModal(event)" class="text-gray-400 hover:text-gray-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-            <p class="mb-6 text-sm" style="color: var(--text-muted);">Select the apps you're interested in, and
-                we'll notify you when they launch.</p>
-
-            <form
-                    action="https://app.us11.list-manage.com/subscribe/post?u=84a973b51103f6e1ed655285d&amp;id=cedf2169b5&amp;f_id=00e4c6e3f0"
-                    method="post" target="hidden-iframe" onsubmit="handleFormSubmit()">
-                <div class="space-y-3 mb-6 max-h-60 overflow-y-auto pr-2">
-
-                    <label
-                            class="flex items-center space-x-3 p-2 rounded hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer">
-                        <input type="checkbox"
-                               class="form-checkbox h-5 w-5 rounded border-gray-300 focus:ring-opacity-50 transition duration-150 ease-in-out"
-                               style="color: var(--primary-color); border-color: var(--input-border); background-color: var(--input-bg);"
-                               name="group[35662][2]" id="check-cards">
-                        <span style="color: var(--text-main);">MemoCards</span>
-                    </label>
-                    <label
-                            class="flex items-center space-x-3 p-2 rounded hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer">
-                        <input type="checkbox"
-                               class="form-checkbox h-5 w-5 rounded border-gray-300 focus:ring-opacity-50 transition duration-150 ease-in-out"
-                               style="color: var(--primary-color); border-color: var(--input-border); background-color: var(--input-bg);"
-                               name="group[35662][128]" id="check-friends">
-                        <span style="color: var(--text-main);">Friends keeper</span>
-                    </label>
-                    <!--                    <label-->
-                    <!--                            class="flex items-center space-x-3 p-2 rounded hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer">-->
-                    <!--                        <input type="checkbox"-->
-                    <!--                               class="form-checkbox h-5 w-5 rounded border-gray-300 focus:ring-opacity-50 transition duration-150 ease-in-out"-->
-                    <!--                               style="color: var(&#45;&#45;primary-color); border-color: var(&#45;&#45;input-border); background-color: var(&#45;&#45;input-bg);"-->
-                    <!--                               name="group[35662][4]" id="check-palace">-->
-                    <!--                        <span style="color: var(&#45;&#45;text-main);">Recall:palace</span>-->
-                    <!--                    </label>-->
-                    <label
-                            class="flex items-center space-x-3 p-2 rounded hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer">
-                        <input type="checkbox"
-                               class="form-checkbox h-5 w-5 rounded border-gray-300 focus:ring-opacity-50 transition duration-150 ease-in-out"
-                               style="color: var(--primary-color); border-color: var(--input-border); background-color: var(--input-bg);"
-                               name="group[35662][8]" id="check-metronome">
-                        <span style="color: var(--text-main);">Broken metronome</span>
-                    </label>
-                    <label
-                            class="flex items-center space-x-3 p-2 rounded hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer">
-                        <input type="checkbox"
-                               class="form-checkbox h-5 w-5 rounded border-gray-300 focus:ring-opacity-50 transition duration-150 ease-in-out"
-                               style="color: var(--primary-color); border-color: var(--input-border); background-color: var(--input-bg);"
-                               name="group[35662][16]" id="check-focus">
-                        <span style="color: var(--text-main);">Focus</span>
-                    </label>
-                    <label
-                            class="flex items-center space-x-3 p-2 rounded hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer">
-                        <input type="checkbox"
-                               class="form-checkbox h-5 w-5 rounded border-gray-300 focus:ring-opacity-50 transition duration-150 ease-in-out"
-                               style="color: var(--primary-color); border-color: var(--input-border); background-color: var(--input-bg);"
-                               name="group[35662][32]" id="check-kaizen">
-                        <span style="color: var(--text-main);">Kaizen questions</span>
-                    </label>
-                    <!--                    <label-->
-                    <!--                            class="flex items-center space-x-3 p-2 rounded hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer">-->
-                    <!--                        <input type="checkbox"-->
-                    <!--                               class="form-checkbox h-5 w-5 rounded border-gray-300 focus:ring-opacity-50 transition duration-150 ease-in-out"-->
-                    <!--                               style="color: var(&#45;&#45;primary-color); border-color: var(&#45;&#45;input-border); background-color: var(&#45;&#45;input-bg);"-->
-                    <!--                               name="group[35662][64]" id="check-wishlist">-->
-                    <!--                        <span style="color: var(&#45;&#45;text-main);">Wishlist</span>-->
-                    <!--                    </label>-->
-                </div>
-
-                <div class="mb-4">
-                    <input type="email" name="EMAIL" placeholder="Enter your email address" required
-                           class="form-input w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-all">
-                </div>
-
-                <!-- Anti-spam honeypot -->
-                <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                    <input type="text" name="b_84a973b51103f6e1ed655285d_cedf2169b5" tabindex="-1" value="">
-                </div>
-
-                <button type="submit" class="btn-primary w-full font-bold py-3 rounded-lg shadow-lg">
-                    Notify Me
-                </button>
-
-                <p class="text-xs text-center mt-4" style="color: var(--text-muted);">
-                    We respect your inbox. Your email will only be used for launch notifications.
-                </p>
-
-                <p class="text-xs text-center mt-4" style="color: var(--text-muted);">
-                    Powered by mailchimp.
-                </p>
-            </form>
+<div id="modal" class="modal hidden" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <div class="modal-header">
+            <h3>Get Notified</h3>
+            <button onclick="closeModal(event)" class="close-btn">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
         </div>
+        <p class="modal-desc">Select the apps you're interested in, and we'll notify you when they launch.</p>
+
+        <form action="https://app.us11.list-manage.com/subscribe/post?u=84a973b51103f6e1ed655285d&amp;id=cedf2169b5&amp;f_id=00e4c6e3f0"
+              method="post" target="hidden-iframe" onsubmit="handleFormSubmit()">
+            <div class="form-options">
+                <label class="option-label">
+                    <input type="checkbox" class="form-checkbox" name="group[35662][2]" id="check-cards">
+                    <span>MemoCards</span>
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" class="form-checkbox" name="group[35662][128]" id="check-friends">
+                    <span>Friends keeper</span>
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" class="form-checkbox" name="group[35662][8]" id="check-metronome">
+                    <span>Broken metronome</span>
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" class="form-checkbox" name="group[35662][16]" id="check-focus">
+                    <span>Focus</span>
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" class="form-checkbox" name="group[35662][32]" id="check-kaizen">
+                    <span>Kaizen questions</span>
+                </label>
+            </div>
+
+            <div class="email-input-wrapper">
+                <input type="email" name="EMAIL" placeholder="Enter your email address" required class="form-input">
+            </div>
+
+            <!-- Anti-spam honeypot -->
+            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <input type="text" name="b_84a973b51103f6e1ed655285d_cedf2169b5" tabindex="-1" value="">
+            </div>
+
+            <a href="javascript:void(0)" class="btn-primary" id="waitlist-submit" onclick="document.querySelector('#modal form').requestSubmit()">
+                Waitlist
+            </a>
+
+            <p class="modal-footer-text">
+                We respect your inbox. Your email will only be used for launch notifications.<br>
+                Powered by mailchimp.
+            </p>
+        </form>
     </div>
 </div>
 
@@ -583,12 +707,12 @@
         document.documentElement.setAttribute('data-theme', 'dark');
         sunIcon.classList.remove('hidden');
         moonIcon.classList.add('hidden');
-        logo.classList.add('filter', 'brightness-200');
+        logo.classList.add('brightness-200');
     } else {
         document.documentElement.setAttribute('data-theme', 'light');
         sunIcon.classList.add('hidden');
         moonIcon.classList.remove('hidden');
-        logo.classList.remove('filter', 'brightness-200');
+        logo.classList.remove('brightness-200');
     }
 
     themeToggle.addEventListener('click', () => {
@@ -601,11 +725,11 @@
         if (newTheme === 'dark') {
             sunIcon.classList.remove('hidden');
             moonIcon.classList.add('hidden');
-            logo.classList.add('filter', 'brightness-200');
+            logo.classList.add('brightness-200');
         } else {
             sunIcon.classList.add('hidden');
             moonIcon.classList.remove('hidden');
-            logo.classList.remove('filter', 'brightness-200');
+            logo.classList.remove('brightness-200');
         }
     });
 
@@ -624,22 +748,22 @@
 
     function closeModal(event) {
         // Only close if clicking the backdrop or close button
-        if (event.target === event.currentTarget || event.target.closest('button')) {
+        if (event.target === event.currentTarget || event.target.closest('.close-btn')) {
             document.getElementById('modal').classList.add('hidden');
         }
     }
 
     function handleFormSubmit() {
-        const btn = document.querySelector('button[type="submit"]');
+        const btn = document.getElementById('waitlist-submit');
         const originalText = btn.innerText;
         btn.innerText = 'Subscribed!';
-        btn.classList.add('bg-green-600');
+        btn.style.backgroundColor = '#059669'; // bg-green-600
 
         setTimeout(() => {
             document.getElementById('modal').classList.add('hidden');
             // Reset button
             btn.innerText = originalText;
-            btn.classList.remove('bg-green-600');
+            btn.style.backgroundColor = '';
         }, 2000);
     }
 </script>
