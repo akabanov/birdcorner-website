@@ -88,8 +88,6 @@
 
         .btn-primary {
             background-color: var(--primary-color);
-            color: [data-theme="dark"] #0f172a;
-            /* This specific override needs to be handled carefully or just use white/black based on theme logic, but CSS vars are cleaner */
             color: white;
             /* Default for bright */
         }
@@ -158,17 +156,41 @@
             background-color: rgba(128, 128, 128, 0.1);
         }
 
-        /* Icon colors */
-        .icon-bg {
-            background-color: #e0e7ff;
-            color: #6366f1;
+        /* Icon styles */
+        .app-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 22%; /* Squircle approximation */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid #e5e7eb; /* Subtle border for light mode */
+            transition: all 0.3s ease;
+            flex-shrink: 0;
         }
 
-        /* Default Indigo 100/500 */
-        [data-theme="dark"] .icon-bg {
-            background-color: #334155;
-            color: #38bdf8;
-            border: 1px solid #475569;
+        [data-theme="dark"] .app-icon {
+            background: linear-gradient(to bottom, #313131, #141414);
+            border-color: #404040;
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .app-icon svg {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+
+        .app-icon-friends svg {
+            width: 80%;
+            height: 80%;
         }
 
         footer a {
@@ -225,10 +247,8 @@
             <!-- EPUB Liberator -->
             <div class="card p-6 rounded-xl flex flex-col h-full relative overflow-hidden">
                 <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg">
-                        <div class="w-8 h-8"
-                             style="background-image: url('assets/app-icon-epub-liberator-48.png'); background-size: contain; background-position: center; background-repeat: no-repeat;">
-                        </div>
+                    <div class="app-icon mr-4">
+                        <img src="assets/app-icon-epub-liberator-48.png" alt="EPUB Liberator Icon">
                     </div>
                     <h3 class="text-xl font-bold" style="color: var(--text-main);">EPUB Liberator for Kobo</h3>
                 </div>
@@ -243,10 +263,8 @@
             <!-- Domain Sonar -->
             <div class="card p-6 rounded-xl flex flex-col h-full relative overflow-hidden">
                 <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg">
-                        <div class="w-8 h-8"
-                             style="background-image: url('assets/app-icon-domain-sonar-48.png'); background-size: contain; background-position: center; background-repeat: no-repeat;">
-                        </div>
+                    <div class="app-icon mr-4">
+                        <img src="assets/app-icon-domain-sonar-48.png" alt="Domain Sonar Icon">
                     </div>
                     <h3 class="text-xl font-bold" style="color: var(--text-main);">Domain Sonar</h3>
                 </div>
@@ -268,10 +286,8 @@
             <!-- MemoNumbers -->
             <div class="card p-6 rounded-xl flex flex-col h-full">
                 <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-pink-500" style="background-color: white;">
-                        <div class="w-8 h-8"
-                             style="background-image: url('assets/app-icon-memonumbers-48.png'); background-size: contain; background-position: center; background-repeat: no-repeat;">
-                        </div>
+                    <div class="app-icon mr-4">
+                        <img src="assets/app-icon-memonumbers-48.png" alt="MemoNumbers Icon">
                     </div>
                     <h3 class="text-xl font-bold" style="color: var(--text-main);">MemoNumbers</h3>
                 </div>
@@ -286,8 +302,8 @@
             <!-- MemoCards -->
             <div class="card p-6 rounded-xl flex flex-col h-full">
                 <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-blue-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="app-icon mr-4 text-blue-500">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
                             </path>
@@ -307,8 +323,8 @@
             <!-- Friends keeper -->
             <div class="card p-6 rounded-xl flex flex-col h-full">
                 <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-teal-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="app-icon app-icon-friends mr-4 text-teal-500">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
                             </path>
@@ -348,9 +364,8 @@
             <!-- Broken metronome -->
             <div class="card p-6 rounded-xl flex flex-col h-full">
                 <div class="flex items-center mb-4">
-                    <div
-                            class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-green-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="app-icon mr-4 text-green-500">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
@@ -370,8 +385,8 @@
             <!-- Focus -->
             <div class="card p-6 rounded-xl flex flex-col h-full">
                 <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-red-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="app-icon mr-4 text-red-500">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
@@ -388,9 +403,8 @@
             <!-- Kaizen questions -->
             <div class="card p-6 rounded-xl flex flex-col h-full">
                 <div class="flex items-center mb-4">
-                    <div
-                            class="w-12 h-12 rounded-full flex items-center justify-center mr-4 icon-bg text-purple-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="app-icon mr-4 text-purple-500">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
                             </path>
@@ -526,8 +540,7 @@
 
                 <div class="mb-4">
                     <input type="email" name="EMAIL" placeholder="Enter your email address" required
-                           class="form-input w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-all"
-                           style="focus:ring-color: var(--primary-color);">
+                           class="form-input w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-all">
                 </div>
 
                 <!-- Anti-spam honeypot -->
