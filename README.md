@@ -1,1 +1,1 @@
-https://www.birdcorner.app website
+https://www.birdcorner.app
