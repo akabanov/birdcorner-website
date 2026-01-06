@@ -11,6 +11,8 @@ and I hope it'll help somebody else.
 
 Some tactics work even better for naming a business, a website, or a product.
 
+<!--more-->
+
 > **Note**: Google your candidates before you get too attached to a particular name.
 >
 > Check the names against existing top-level domains.

@@ -14,17 +14,6 @@ params:
     avatar: images/authors/alexander-kabanov.jpg
   comments:
     provider: giscus
-    giscus:
-      repo: birdcorner/blog-comments
-      repoId: REPO_ID
-      category: Announcements
-      categoryId: CATEGORY_ID
-      mapping: pathname
-      reactionsEnabled: true
-      emitMetadata: false
-      inputPosition: bottom
-      theme: preferred_color_scheme
-      lang: en
 
 taxonomies:
   author: authors
