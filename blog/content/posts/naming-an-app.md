@@ -1,3 +1,8 @@
+---
+title: "How to Name Your App"
+date: 2026-01-05
+lastmod: 2026-01-05
+---
 # How to Name Your App
 
 Here are some tactics I used to find a name for an app I'm building.
