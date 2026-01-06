@@ -1,3 +1,25 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* full viewport height */
+}
+
+.content {
+    flex: 1; /* takes all available vertical space */
+}
+
+footer {
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    background-color: #fafafa; /* optional for visibility */
+}
+
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
