@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>{{ .Title }} | {{ site.Title }}</title>
     <meta name="description" content="{{ .Summary | plainify }}">
+    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
 </head>
 
 <body>
@@ -38,7 +39,7 @@
             </p>
         </section>
 
-        {{ if neq .Params.comments "false" }}
+        {{ if ne .Params.comments false }}
         <section id="comments">
             <h3>Comments</h3>
 
