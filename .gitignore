@@ -1,1 +1,3 @@
 .idea
+/blog/.hugo_build.lock
+/blog/public/
