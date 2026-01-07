@@ -4,15 +4,15 @@ date: 2026-01-05
 lastmod: 2026-01-05
 ---
 
-Here are some tactics I used to find a name for an app I'm building.
+Here are some tactics I used while suffering through the search for a name for an app I'm building.
 I'm writing this as a reminder to myself, 
-and I hope it'll help somebody else. 
+and I hope it'll help somebody else.
 
-Some tactics work even better for naming a business, a website, or a product.
+Some of them work even better for naming a business, a website, or a product.
 
 <!--more-->
 
-> **Note**: Google your candidates before you get too attached to a particular name.
+> **Note**: google your candidates before you get too attached to a particular name.
 >
 > Check the names against existing top-level domains.
 > You can use [Domain Sonar](https://domainsonar.birdcorner.app/) for this.
@@ -22,16 +22,17 @@ Some tactics work even better for naming a business, a website, or a product.
 > for existing trademarks. It's cheaper to do it now than to get
 > a cease and desist letter once you are known and profitable.
 >
-> You'll find pretty soon that all the good names are already taken.
-> Many of them more than once. Good luck.
+> You'll find pretty soon that the majority of the good names are already taken.
+> Many of them more than once.
+> 
+> Good luck.
 
-## DIY
+## Self-explaining
 
-_Come up with a good, simple, self-explanatory name._
+Come up with a good, simple, self-explanatory name.
 
-I'm making an app that teaches a technique for unlocking number memorization 'talent' you didn't know you had.
+I'm making [an app](https://numerista.app/) that teaches a technique for unlocking number memorization 'talent' you didn't know you had.
 The app also helps to put this technique into practice in a few different ways.
-[Here's the landing page](https://numerista.app/), check it out.
 
 It's OK to have a simple, self-explanatory name. Like Calendar. Or Camera. Or Calculator.
 So I named it MemoNumbers. Inevitably.
@@ -93,6 +94,22 @@ Toss them.
 
 Sink deeper into desperation.
 
+## A real name
+
+Think about persons names. Or pet names.
+Or geographic names (yes, I know I already mentioned lakes).
+If you think I'm joking, google Dave, Brigit, and Marcus apps.
+
+It might be a good choice for an app like a helper, coach, or companion (health, habits, language learning, finance assistant).
+But the trade-offs are uniqueness and searchability among some others.
+
+Tip: you’re not restricted to your native language or country.
+But be ready to explain your choice, so it won’t feel like cultural appropriation.
+
+Paradoxically, you can still trademark them.
+Check for Alexander at USPTO for example.
+I was surprised to say the least.
+
 ## Scramble
 
 By now, you probably have a list of promising names you have rejected for some reason.
@@ -128,4 +145,20 @@ The "Vocalista" iPhone app is a great example.
 
 My journey to better memory skills started thanks to "The Mentalist" series.
 
-And this is how I ended up with [Numerista](https://numerista.app/).
+At some point I stopped thinking about "number memorization"
+and started thinking about the kind of person who does it.
+
+That's how I ended up with [Numerista](https://numerista.app/).
+
+If you're stuck, try this:
+can you come up with an app name suitable as a label for a person
+using your app?
+
+If yes, you might have something.
+
+If not, go back to the generators and suffer a little more.
+
+## Conclusion
+
+Please tell me if I missed some good approach here.
+
