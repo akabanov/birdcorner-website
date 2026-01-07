@@ -5,7 +5,7 @@ lastmod: 2026-01-05
 ---
 
 Here are some tactics I used while suffering through the search for a name for an app I'm building.
-Some of them work even better for naming a business, a website, or a product.
+Some approaches work even better for naming a business, a website, or a product.
 
 <!--more-->
 

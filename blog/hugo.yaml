@@ -1,6 +1,6 @@
 baseURL: https://blog.birdcorner.app/
 languageCode: en-us
-title: BirdCorner Apps - Blog
+title: BirdCorner Apps Blog
 enableGitInfo: true
 
 params:
