@@ -5,12 +5,12 @@ lastmod: 2026-01-05
 ---
 
 Here are some tactics I used while suffering through the search for a name for an app I'm building.
-I'm writing this as a reminder to myself, 
-and I hope it'll help somebody else.
-
 Some of them work even better for naming a business, a website, or a product.
 
 <!--more-->
+
+I'm writing this as a reminder to myself, 
+and I hope it'll help somebody else.
 
 > **Note**: google your candidates before you get too attached to a particular name.
 >
@@ -160,5 +160,5 @@ If not, go back to the generators and suffer a little more.
 
 ## Conclusion
 
-Please tell me if I missed some good approach here.
+Please tell me in the comments if I missed some good approach here.
 

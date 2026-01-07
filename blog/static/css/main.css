@@ -1,4 +1,4 @@
-html, body {
+body {
     height: 100%;
     margin: 0;
 }
@@ -17,7 +17,7 @@ footer {
     padding: 1rem 0;
     text-align: center;
     border-top: 1px solid #ddd;
-    background-color: #fafafa; /* optional for visibility */
+    background-color: #fafafa;
 }
 
 body {
@@ -39,7 +39,7 @@ blockquote {
     border-left: 0.25rem solid #ddd;
 }
 
-.author {
+.author, .comments {
     margin-top: 3rem;
     padding-top: 1.5rem;
     border-top: 1px solid #ddd;
@@ -73,12 +73,6 @@ blockquote {
     .author-content img {
         margin-bottom: 0.5rem;
     }
-}
-
-.comments {
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #ddd;
 }
 
 .comments button {
