@@ -4,70 +4,71 @@
     <meta charset="utf-8">
     <title>{{ .Title }} | {{ site.Title }}</title>
     <meta name="description" content="{{ .Summary | plainify }}">
-    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/main.css?v=" | relURL }}">
     <link rel="icon" type="image/png" sizes="48x48" href="{{ "favicon.png" | relURL }}">
 </head>
 
 <body>
-
-<main>
-    <article>
-        <h2>{{ .Title }}</h2>
-
-        <p>
-            By <strong>{{ site.Params.author.name }}</strong><br>
-            Last updated: {{ .Lastmod.Format "2 Jan 2006" }}
-        </p>
-
-        {{ .Content }}
-
-        <section class="author">
-            <h3>About the author</h3>
-
-            <div class="author-content">
-                <img src="{{ site.Params.author.avatar | relURL }}"
-                     alt="{{ site.Params.author.name }}"
-                     width="120"
-                     height="120">
+<div class="page-container">
+    <div class="content">
+        <main>
+            <article>
+                <h2>{{ .Title }}</h2>
 
                 <p>
-                    <strong>{{ site.Params.author.name }}</strong> is the founder of
-                    BirdCorner Apps with two decades of full-stack engineering experience,
-                    primarily in the Java ecosystem.
+                    By <strong>{{ site.Params.author.name }}</strong><br>
+                    Last updated: {{ .Lastmod.Format "2 Jan 2006" }}
                 </p>
-            </div>
-        </section>
 
-        {{ if ne .Params.comments false }}
-        <section class="comments">
-            <h3>Comments</h3>
+                {{ .Content }}
 
-            <script src="https://giscus.app/client.js"
-                    data-repo="akabanov/birdcorner-website"
-                    data-repo-id="R_kgDONiwFmQ"
-                    data-category="Blog"
-                    data-category-id="DIC_kwDONiwFmc4C0pUk"
-                    data-mapping="pathname"
-                    data-strict="0"
-                    data-reactions-enabled="0"
-                    data-emit-metadata="0"
-                    data-input-position="bottom"
-                    data-theme="preferred_color_scheme"
-                    data-lang="en"
-                    crossorigin="anonymous"
-                    async>
-            </script>
+                <section class="author">
+                    <img src="{{ site.Params.author.avatar | relURL }}"
+                         alt="{{ site.Params.author.name }}"
+                         width="120"
+                         height="120">
 
-            <noscript>
-                <p>Comments require JavaScript and a GitHub account.</p>
-            </noscript>
-        </section>
-        {{ end }}
+                    <div class="author-content">
+                        <h3>About the author</h3>
+                        <p>
+                            <strong>{{ site.Params.author.name }}</strong> is the founder of
+                            BirdCorner Apps with two decades of full-stack engineering experience,
+                            primarily in the Java ecosystem.
+                        </p>
+                    </div>
+                </section>
 
-    </article>
-</main>
+                {{ if ne .Params.comments false }}
+                    <section class="comments">
+                        <h3>Comments</h3>
 
-{{ partial "footer.html" . }}
+                        <script src="https://giscus.app/client.js"
+                                data-repo="akabanov/birdcorner-website"
+                                data-repo-id="R_kgDONiwFmQ"
+                                data-category="Blog"
+                                data-category-id="DIC_kwDONiwFmc4C0pUk"
+                                data-mapping="pathname"
+                                data-strict="0"
+                                data-reactions-enabled="0"
+                                data-emit-metadata="0"
+                                data-input-position="bottom"
+                                data-theme="preferred_color_scheme"
+                                data-lang="en"
+                                crossorigin="anonymous"
+                                async>
+                        </script>
 
+                        <noscript>
+                            <p>Comments require JavaScript and a GitHub account.</p>
+                        </noscript>
+                    </section>
+                {{ end }}
+
+            </article>
+        </main>
+    </div>
+
+    {{ partial "footer.html" . }}
+</div>
 </body>
 </html>

@@ -12,7 +12,7 @@ Some of them work even better for naming a business, a website, or a product.
 I'm writing this as a reminder to myself, 
 and I hope it'll help somebody else.
 
-> **Note**: google your candidates before you get too attached to a particular name.
+> **Tip**: google your candidates before you get too attached to a particular name.
 >
 > Check the names against existing top-level domains.
 > You can use [Domain Sonar](https://domainsonar.birdcorner.app/) for this.
@@ -27,7 +27,9 @@ and I hope it'll help somebody else.
 > 
 > Good luck.
 
-## Self-explaining
+Now, let's get to it.
+
+## Name what it does
 
 Come up with a good, simple, self-explanatory name.
 
@@ -97,10 +99,10 @@ Sink deeper into desperation.
 ## A real name
 
 Think about persons names. Or pet names.
-Or geographic names (yes, I know I already mentioned lakes).
+Or geographic names (yes, I know I already mentioned the lakes).
 If you think I'm joking, google Dave, Brigit, and Marcus apps.
 
-It might be a good choice for an app like a helper, coach, or companion (health, habits, language learning, finance assistant).
+It might be a good choice for a helper, a coach, or a companion app (health, habits, language learning, finance assistant).
 But the trade-offs are uniqueness and searchability among some others.
 
 Tip: you’re not restricted to your native language or country.
@@ -160,5 +162,5 @@ If not, go back to the generators and suffer a little more.
 
 ## Conclusion
 
-Please tell me in the comments if I missed some good approach here.
+Please tell me in the comments if I missed some good approach here. This might help me and others save valuable time in the future.
 

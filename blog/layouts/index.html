@@ -9,32 +9,33 @@
 </head>
 
 <body>
-<div class="content">
-    <header>
-        <h1>{{ site.Title }}</h1>
-    </header>
+<div class="page-container">
+    <div class="content">
+        <header>
+            <h1>{{ site.Title }}</h1>
+        </header>
 
-    <main>
-        <section>
-            {{ range sort site.RegularPages "Lastmod" "desc" }}
-            <article>
-                <h2>
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </h2>
+        <main>
+            <section>
+                {{ range sort site.RegularPages "Lastmod" "desc" }}
+                <article>
+                    <h2>
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h2>
 
-                <p>
-                    By <strong>{{ site.Params.author.name }}</strong><br>
-                    Last updated: {{ .Lastmod.Format "2 Jan 2006" }}
-                </p>
+                    <p>
+                        By <strong>{{ site.Params.author.name }}</strong><br>
+                        Last updated: {{ .Lastmod.Format "2 Jan 2006" }}
+                    </p>
 
-                {{ .Summary }}
-            </article>
-            {{ end }}
-        </section>
-    </main>
+                    {{ .Summary }}
+                </article>
+                {{ end }}
+            </section>
+        </main>
+    </div>
 
     {{ partial "footer.html" . }}
-
 </div>
 </body>
 </html>

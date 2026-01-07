@@ -1,31 +1,32 @@
-body {
+html, body {
     height: 100%;
     margin: 0;
-}
-
-.page-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* full viewport height */
-}
-
-.content {
-    flex: 1; /* takes all available vertical space */
-}
-
-footer {
-    padding: 1rem 0;
-    text-align: center;
-    border-top: 1px solid #ddd;
-    background-color: #fafafa;
 }
 
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
     max-width: 760px;
-    margin: 2rem auto;
+    margin: 0 auto;
     padding: 0 1rem;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    background-color: #fafafa;
 }
 
 header h1 {
@@ -49,28 +50,28 @@ blockquote {
     margin-bottom: 1rem;
 }
 
-.author-content {
+.author {
     display: flex;
     gap: 1rem;
     align-items: center;
 }
 
-.author-content img {
+.author img {
     border-radius: 50%;
     flex-shrink: 0;
 }
 
-.author-content p {
+.author p {
     margin: 0;
 }
 
 @media (max-width: 600px) {
-    .author-content {
+    .author {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .author-content img {
+    .author img {
         margin-bottom: 0.5rem;
     }
 }
