@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  web-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,10 +24,6 @@ jobs:
       - name: Build
         run: hugo --minify
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
