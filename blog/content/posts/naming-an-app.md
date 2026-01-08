@@ -1,10 +1,9 @@
 ---
 title: "How to Name Your App"
 date: 2026-01-05
-lastmod: 2026-01-05
 ---
 
-Here are some tactics I used while suffering through the search for a name for an app I'm building.
+Here are some tactics I used while suffering through the search for a new app name.
 Some approaches work even better for naming a business, a website, or a product.
 
 <!--more-->
@@ -108,8 +107,8 @@ But the trade-offs are uniqueness and searchability among some others.
 Tip: you’re not restricted to your native language or country.
 But be ready to explain your choice, so it won’t feel like cultural appropriation.
 
-Paradoxically, you can still trademark them.
-Check for Alexander at USPTO for example.
+Interestingly, you can still trademark them.
+Check for Alexander at USPTO, for example.
 I was surprised to say the least.
 
 ## Scramble
@@ -143,22 +142,15 @@ The derivatives, like "Enmory" and "Tenmory", also failed the checks.
 ## User identity
 
 Shift from the app's purpose to what identity it gives the user.
-The "Vocalista" iPhone app is a great example.
 
-My journey to better memory skills started thanks to "The Mentalist" series.
+Try this:
+can you come up with an app name suitable as a label for a person
+using your app?
 
 At some point I stopped thinking about "number memorization"
 and started thinking about the kind of person who does it.
 
 That's how I ended up with [Numerista](https://numerista.app/).
-
-If you're stuck, try this:
-can you come up with an app name suitable as a label for a person
-using your app?
-
-If yes, you might have something.
-
-If not, go back to the generators and suffer a little more.
 
 ## Conclusion
 
