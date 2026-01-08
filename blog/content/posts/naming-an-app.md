@@ -150,7 +150,7 @@ using your app?
 At some point I stopped thinking about "number memorization"
 and started thinking about the kind of person who does it.
 
-That's how I ended up with [Numerista](https://numerista.app/).
+And that's how I _~~met~~_ ended up with [Numerista](https://numerista.app/).
 
 ## Conclusion
 

@@ -7,29 +7,10 @@
     const moonIcon = document.getElementById('moon-icon');
     const logo = document.getElementById('header-logo');
 
-    const savedTheme = localStorage.getItem('theme');
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-
-    if (savedTheme === 'dark' || (!savedTheme && systemTheme === 'dark')) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        sunIcon.classList.remove('hidden');
-        moonIcon.classList.add('hidden');
-        if (logo) logo.classList.add('brightness-200');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        sunIcon.classList.add('hidden');
-        moonIcon.classList.remove('hidden');
-        if (logo) logo.classList.remove('brightness-200');
-    }
-
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-
-        if (newTheme === 'dark') {
+    // UI Update Function based on current theme
+    function updateThemeUI() {
+        const theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'dark') {
             sunIcon.classList.remove('hidden');
             moonIcon.classList.add('hidden');
             if (logo) logo.classList.add('brightness-200');
@@ -38,6 +19,18 @@
             moonIcon.classList.remove('hidden');
             if (logo) logo.classList.remove('brightness-200');
         }
+    }
+
+    // Initial UI update (Theme detection handled in head.html)
+    updateThemeUI();
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeUI();
     });
 
     // Modal Logic
