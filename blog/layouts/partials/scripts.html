@@ -1,0 +1,75 @@
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear().toString();
+
+    // Theme Switcher Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+    const logo = document.getElementById('header-logo');
+
+    const savedTheme = localStorage.getItem('theme');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+    if (savedTheme === 'dark' || (!savedTheme && systemTheme === 'dark')) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+        if (logo) logo.classList.add('brightness-200');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+        if (logo) logo.classList.remove('brightness-200');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+
+        if (newTheme === 'dark') {
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+            if (logo) logo.classList.add('brightness-200');
+        } else {
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+            if (logo) logo.classList.remove('brightness-200');
+        }
+    });
+
+    // Modal Logic
+    function openModal(appId) {
+        const modal = document.getElementById('modal');
+        if (!modal) return;
+        modal.classList.remove('hidden');
+
+        if (appId) {
+            const checkbox = document.getElementById('check-' + appId);
+            if (checkbox) {
+                checkbox.checked = true;
+            }
+        }
+    }
+
+    function closeModal(event) {
+        if (event.target === event.currentTarget || event.target.closest('.close-btn')) {
+            const modal = document.getElementById('modal');
+            if (modal) modal.classList.add('hidden');
+        }
+    }
+
+    function handleFormSubmit() {
+        const modal = document.getElementById('modal');
+        const submitBtn = document.getElementById('waitlist-submit');
+        if (submitBtn) {
+            submitBtn.textContent = 'Subscribed!';
+            submitBtn.classList.add('bg-green-600');
+        }
+        setTimeout(() => {
+            if (modal) modal.classList.add('hidden');
+        }, 1500);
+    }
+</script>

@@ -1,0 +1,63 @@
+<!-- Modal -->
+<div id="modal" class="modal hidden" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <div class="modal-header">
+            <h3>Get Notified</h3>
+            <button onclick="closeModal(event)" class="close-btn">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <p class="modal-desc">Select the apps you're interested in, and we'll notify you when they launch.</p>
+
+        <form
+            action="https://app.us11.list-manage.com/subscribe/post?u=84a973b51103f6e1ed655285d&amp;id=cedf2169b5&amp;f_id=00e4c6e3f0"
+            method="post" target="hidden-iframe" onsubmit="handleFormSubmit()">
+            <div class="form-options">
+                <label class="option-label">
+                    <input type="checkbox" class="form-checkbox" name="group[35662][2]" id="check-cards">
+                    <span>MemoCards</span>
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" class="form-checkbox" name="group[35662][128]" id="check-friends">
+                    <span>Friends keeper</span>
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" class="form-checkbox" name="group[35662][8]" id="check-metronome">
+                    <span>Broken metronome</span>
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" class="form-checkbox" name="group[35662][16]" id="check-focus">
+                    <span>Focus</span>
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" class="form-checkbox" name="group[35662][32]" id="check-kaizen">
+                    <span>Kaizen questions</span>
+                </label>
+            </div>
+
+            <div class="email-input-wrapper">
+                <input type="email" name="EMAIL" placeholder="Enter your email address" required class="form-input">
+            </div>
+
+            <!-- Anti-spam honeypot -->
+            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <input type="text" name="b_84a973b51103f6e1ed655285d_cedf2169b5" tabindex="-1" value="">
+            </div>
+
+            <a href="javascript:void(0)" class="btn-primary" id="waitlist-submit"
+                onclick="document.querySelector('#modal form').requestSubmit()">
+                Waitlist
+            </a>
+
+            <p class="modal-footer-text">
+                We respect your inbox. Your email will only be used for launch notifications.<br>
+                Powered by mailchimp.
+            </p>
+        </form>
+    </div>
+</div>
+
+<iframe name="hidden-iframe" style="display:none;"></iframe>

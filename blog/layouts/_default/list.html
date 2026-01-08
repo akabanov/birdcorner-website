@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="article-container">
+    <h2 class="section-title">Latest Posts</h2>
+
+    <section>
+        {{ range sort .Pages "Lastmod" "desc" }}
+        <article style="margin-bottom: 3rem;">
+            <h2>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+
+            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1rem;">
+                By <strong>{{ site.Params.author.name }}</strong> |
+                Last updated: {{ .Lastmod.Format "2 Jan 2006" }}
+            </p>
+
+            <div>
+                {{ .Summary }}
+                <p style="margin-top: 1rem;">
+                    <a href="{{ .RelPermalink }}">Read more →</a>
+                </p>
+            </div>
+        </article>
+        {{ end }}
+    </section>
+</div>
+{{ end }}

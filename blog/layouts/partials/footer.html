@@ -1,9 +1,9 @@
 <footer>
-    <p>&copy; 2025-{{ now.Year }}
-        <a href="https://www.birdcorner.app" target="_blank">BirdCorner Apps</a> |
-        {{ if not .IsHome }}
-        <a href="{{ site.BaseURL }}">Blog</a> |
-        {{ end }}
-        <a href="https://www.linkedin.com/in/alexander-kabanov/" target="_blank">Contact</a>
-    </p>
+    <div class="container">
+        <p>&copy; 2025-<span id="year"></span> BirdCorner Apps</p>
+        <div>
+            <a href="{{ "privacy-policy/" | relURL }}">Privacy Policy</a> |
+            <a href="https://www.linkedin.com/in/alexander-kabanov/" target="_blank">Contact</a>
+        </div>
+    </div>
 </footer>

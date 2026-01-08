@@ -1,41 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>{{ site.Title }}</title>
-    <meta name="description" content="{{ site.Params.siteDescription }}">
-    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
-    <link rel="icon" type="image/png" sizes="48x48" href="{{ "favicon.png" | relURL }}">
-</head>
+{{ define "main" }}
+<div class="container">
+    <h2 class="section-title">Up and Running</h2>
 
-<body>
-<div class="page-container">
-    <div class="content">
-        <header>
-            <h1>{{ site.Title }}</h1>
-        </header>
+    <div class="app-grid">
+        <div class="card">
+            <div class="card-header">
+                <div class="app-icon">
+                    <img src="{{ "assets/app-icon-domain-sonar-48.png" | relURL }}" alt="Domain Sonar Icon">
+                </div>
+                <h3>Domain Sonar</h3>
+            </div>
+            <p>
+                See if your brand or product name is already taken as a domain.
+                An essential tool for trademark research.
+            </p>
+            <a href="https://domainsonar.birdcorner.app/" target="_blank" class="btn-primary">Open</a>
+        </div>
 
-        <main>
-            <section>
-                {{ range sort site.RegularPages "Lastmod" "desc" }}
-                <article>
-                    <h2>
-                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    </h2>
-
-                    <p>
-                        By <strong>{{ site.Params.author.name }}</strong><br>
-                        Last updated: {{ .Lastmod.Format "2 Jan 2006" }}
-                    </p>
-
-                    {{ .Summary }}
-                </article>
-                {{ end }}
-            </section>
-        </main>
+        <div class="card">
+            <div class="card-header">
+                <div class="app-icon">
+                    <img src="{{ "assets/app-icon-epub-liberator-48.png" | relURL }}" alt="EPUB Liberator Icon">
+                </div>
+                <h3>EPUB Liberator</h3>
+            </div>
+            <p>
+                Unlock line spacing, text alignment, and font size settings in your EPUBs and read them with
+                comfort on your <strong>Kobo</strong> screen.
+            </p>
+            <a href="https://epubliberator.birdcorner.app/" target="_blank" class="btn-primary">Open</a>
+        </div>
     </div>
 
-    {{ partial "footer.html" . }}
+    <!-- Coming Soon Section -->
+    <h2 class="section-title">Coming Soon</h2>
+
+    <div class="app-grid">
+        <!-- Numerista -->
+        <div class="card">
+            <div class="card-header">
+                <div class="app-icon">
+                    <img src="{{ "assets/app-icon-numerista-48.png" | relURL }}" alt="Numerista Icon">
+                </div>
+                <h3>Numerista</h3>
+            </div>
+            <p>
+                A practical system for remembering numbers.
+                Memorizing is a skill, not a talent.
+                Master your numbers. Step up your game.
+            </p>
+            <a href="https://numerista.app/" target="_blank" class="btn-primary">Show me how</a>
+        </div>
+
+        <!-- MemoCards -->
+        <div class="card">
+            <div class="card-header">
+                <div class="app-icon text-blue-500">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                        </path>
+                    </svg>
+                </div>
+                <h3>MemoCards</h3>
+            </div>
+            <p>
+                Learn to memorize a shuffled deck of cards.
+                A classic memory feat made accessible through step-by-step practice.
+            </p>
+            <a href="javascript:void(0)" class="btn-primary" onclick="openModal('cards')">
+                Waitlist
+            </a>
+        </div>
+
+        <!-- Friends keeper -->
+        <div class="card">
+            <div class="card-header">
+                <div class="app-icon app-icon-friends text-teal-500">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                        </path>
+                    </svg>
+                </div>
+                <h3>Friends keeper</h3>
+            </div>
+            <p>
+                Your pocket friendship assistant.
+                Learn to connect better with people you care about.
+            </p>
+            <a href="javascript:void(0)" class="btn-primary" onclick="openModal('friends')">
+                Waitlist
+            </a>
+        </div>
+
+        <!-- Broken metronome -->
+        <div class="card">
+            <div class="card-header">
+                <div class="app-icon text-green-500">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3>Broken metronome</h3>
+            </div>
+            <p>
+                A metronome that misses beats, so you can perfect your timing skills.
+                Backed by neuroscience.
+            </p>
+            <a href="javascript:void(0)" class="btn-primary" onclick="openModal('metronome')">
+                Waitlist
+            </a>
+        </div>
+
+        <!-- Focus -->
+        <div class="card">
+            <div class="card-header">
+                <div class="app-icon text-red-500">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3>Focus</h3>
+            </div>
+            <p>Achieve deep work with a distraction-free timer. Master single-tasking and boost your
+                productivity.</p>
+            <a href="javascript:void(0)" class="btn-primary" onclick="openModal('focus')">
+                Waitlist
+            </a>
+        </div>
+
+        <!-- Kaizen questions -->
+        <div class="card">
+            <div class="card-header">
+                <div class="app-icon text-purple-500">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M8.228 9.001c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                        </path>
+                    </svg>
+                </div>
+                <h3>Kaizen questions</h3>
+            </div>
+            <p>Daily prompts for continuous improvement. Small questions that lead to big changes in your life.</p>
+            <a href="javascript:void(0)" class="btn-primary" onclick="openModal('kaizen')">
+                Waitlist
+            </a>
+        </div>
+    </div>
 </div>
-</body>
-</html>
+
+{{ partial "modal.html" . }}
+{{ end }}

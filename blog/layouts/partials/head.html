@@ -1,0 +1,19 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRWVTFKBW4"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-RRWVTFKBW4');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+
+<link rel="icon" type="image/png" sizes="48x48" href="{{ "assets/icon-48.png" | relURL }}">
+<link rel="apple-touch-icon" href="{{ "assets/icon-192.png" | relURL }}">
+
+{{ $style := resources.Get "css/main.css" | minify }}
+<style>{{ $style.Content | safeCSS }}</style>
