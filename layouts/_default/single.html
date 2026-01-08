@@ -1,0 +1,68 @@
+{{ define "main" }}
+<div class="article-container">
+    <article>
+        <h1>{{ .Title }}</h1>
+
+        <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 2rem;">
+            By <strong>{{ site.Params.author.name }}</strong> |
+            Last updated: {{ .Lastmod.Format "2 Jan 2006" }}
+        </p>
+
+        <div class="post-content">
+            {{ .Content }}
+        </div>
+
+        <section class="author">
+            <img src="{{ site.Params.author.avatar | relURL }}" alt="{{ site.Params.author.name }}" width="100"
+                height="100">
+
+            <div class="author-content">
+                <h3>About the author</h3>
+                <p>
+                    <strong>{{ site.Params.author.name }}</strong> is the founder of
+                    BirdCorner Apps with two decades of full-stack engineering experience,
+                    primarily in the Java ecosystem.
+                </p>
+            </div>
+        </section>
+
+        {{ if ne .Params.comments false }}
+        <section class="comments">
+            <h3>Comments</h3>
+
+            <script>
+                (function () {
+                    const theme = document.documentElement.getAttribute('data-theme') || 'light';
+                    const giscusTheme = theme === 'dark' ? 'cobalt' : 'light';
+                    const script = document.createElement('script');
+                    script.src = 'https://giscus.app/client.js';
+                    script.setAttribute('data-repo', 'akabanov/birdcorner-website');
+                    script.setAttribute('data-repo-id', 'R_kgDONiwFmQ');
+                    script.setAttribute('data-category', 'Blog');
+                    script.setAttribute('data-category-id', 'DIC_kwDONiwFmc4C0pUk');
+                    script.setAttribute('data-mapping', 'pathname');
+                    script.setAttribute('data-strict', '0');
+                    script.setAttribute('data-reactions-enabled', '0');
+                    script.setAttribute('data-emit-metadata', '0');
+                    script.setAttribute('data-input-position', 'bottom');
+                    script.setAttribute('data-theme', giscusTheme);
+                    script.setAttribute('data-lang', 'en');
+                    script.setAttribute('crossorigin', 'anonymous');
+                    script.async = true;
+                    // Append the script to the current container
+                    document.currentScript.parentElement.appendChild(script);
+                })();
+            </script>
+
+            <div class="giscus">
+                <!-- Giscus comments will be inserted here by Giscus client JS -->
+            </div>
+
+            <noscript>
+                <p>Comments require JavaScript and a GitHub account.</p>
+            </noscript>
+        </section>
+        {{ end }}
+    </article>
+</div>
+{{ end }}

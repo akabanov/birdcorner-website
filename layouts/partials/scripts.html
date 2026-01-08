@@ -19,6 +19,19 @@
             moonIcon.classList.remove('hidden');
             if (logo) logo.classList.remove('brightness-200');
         }
+        updateGiscusTheme(theme);
+    }
+
+    // Helper to update Giscus theme dynamically
+    function updateGiscusTheme(theme) {
+        const giscusTheme = theme === 'dark' ? 'cobalt' : 'light';
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+
+        iframe.contentWindow.postMessage(
+            { giscus: { setConfig: { theme: giscusTheme } } },
+            'https://giscus.app'
+        );
     }
 
     // Initial UI update (Theme detection handled in head.html)

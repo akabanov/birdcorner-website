@@ -1,22 +1,15 @@
 baseURL: https://www.birdcorner.app/
 languageCode: en-us
-title: BirdCorner Apps Blog
+title: BirdCorner Apps
 enableGitInfo: true
 
 params:
-  siteName: Blog Title
-  siteDescription: Short description of the blog
   author:
     name: Alexander Kabanov
+    avatar: images/alexander-kabanov.jpg
     bio: >
       Founder of BirdCorner Apps with two decades of full-stack engineering
       experience, primarily in the Java ecosystem.
-    avatar: images/authors/alexander-kabanov.jpg
-  comments:
-    provider: giscus
-
-taxonomies:
-  author: authors
 
 frontmatter:
   lastmod:
