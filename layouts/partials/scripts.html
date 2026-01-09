@@ -13,11 +13,11 @@
         if (theme === 'dark') {
             sunIcon.classList.remove('hidden');
             moonIcon.classList.add('hidden');
-            if (logo) logo.classList.add('brightness-200');
+            if (logo) logo.classList.add('logo-dark-brightness');
         } else {
             sunIcon.classList.add('hidden');
             moonIcon.classList.remove('hidden');
-            if (logo) logo.classList.remove('brightness-200');
+            if (logo) logo.classList.remove('logo-dark-brightness');
         }
         updateGiscusTheme(theme);
     }

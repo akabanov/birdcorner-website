@@ -10,12 +10,11 @@
 <script>
     (function() {
         const savedTheme = localStorage.getItem('theme');
-        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        const theme = savedTheme || systemTheme;
-        if (theme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        } else {
+        const theme = savedTheme || 'dark';
+        if (theme === 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
         }
     })();
 </script>

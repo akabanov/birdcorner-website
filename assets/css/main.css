@@ -253,6 +253,7 @@ h2.section-title {
     color: var(--text-main);
     text-decoration: none;
     font-weight: 500;
+    font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
@@ -285,8 +286,8 @@ h2.section-title {
     display: none !important;
 }
 
-.brightness-200 {
-    filter: brightness(2);
+.logo-dark-brightness {
+    filter: brightness(120%);
 }
 
 footer {
