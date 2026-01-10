@@ -2,6 +2,9 @@ baseURL: https://www.birdcorner.app/
 languageCode: en-us
 title: BirdCorner Apps
 enableGitInfo: true
+disableKinds:
+  - taxonomy
+  - term
 
 params:
   author:
