@@ -1,0 +1,30 @@
+- group: Up and running
+  action: Open
+  apps:
+    - name: Domain Sonar
+      icon: domain-sonar.png
+      url: https://domainsonar.birdcorner.app/
+      description: |
+        See if your brand or product name is already taken as a domain.
+        An essential tool for trademark research.
+
+- group: Coming soon
+  action: More details
+  apps:
+    - name: Numerista
+      icon: numerista.png
+      url: https://numerista.app/
+      description: |
+        A practical system for remembering numbers.
+        Memorizing is a skill, not a talent.
+        Master your numbers. Level up your game.
+
+- group: Under consideration
+  action: I want this
+  apps:
+    - name: MemoCards
+      icon: memocards.svg
+      tag: cards
+      description: |
+        Learn to memorize a shuffled deck of cards.
+        A classic memory feat made accessible through step-by-step practice.

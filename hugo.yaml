@@ -9,7 +9,7 @@ disableKinds:
 params:
   author:
     name: Alexander Kabanov
-    avatar: images/alexander-kabanov-1.jpg
+    avatar: images/avatars/alexander-kabanov-1.jpg
     bio: >
       Founder of BirdCorner Apps with two decades of full-stack engineering
       experience, primarily in the Java ecosystem.
