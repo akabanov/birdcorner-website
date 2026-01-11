@@ -8,8 +8,15 @@
         See if your brand or product name is already taken as a domain.
         An essential tool for trademark research.
 
+    - name: EPUB Liberator
+      icon: epub-liberator.png
+      url: https://epubliberator.birdcorner.app/
+      description: |
+        Unlock line spacing, text alignment, and font size settings in your EPUBs
+        and read them with comfort on your Kobo screen.
+
 - group: Coming soon
-  action: More details
+  action: Take me there
   apps:
     - name: Numerista
       icon: numerista.png
@@ -19,7 +26,7 @@
         Memorizing is a skill, not a talent.
         Master your numbers. Level up your game.
 
-- group: Under consideration
+- group: Maybe
   action: I want this
   apps:
     - name: MemoCards
@@ -28,3 +35,31 @@
       description: |
         Learn to memorize a shuffled deck of cards.
         A classic memory feat made accessible through step-by-step practice.
+
+    - name: Friends keeper
+      icon: friends-keeper.svg
+      tag: friends
+      description: |
+        Your pocket friendship assistant.
+        Learn to connect better with people you care about.
+
+    - name: Broken metronome
+      icon: broken-metronome.svg
+      tag: metronome
+      description: |
+        A metronome that misses beats, so you can perfect your timing skills.
+        Backed by neuroscience.
+
+    - name: Focus
+      icon: focus.svg
+      tag: focus
+      description: |
+        Achieve deep work with a distraction-free timer.
+        Master single-tasking and boost your productivity.
+
+    - name: Kaizen questions
+      icon: kaizen-questions.svg
+      tag: kaizen
+      description: |
+        Daily prompts for continuous improvement.
+        Small questions that lead to big changes in your life.
