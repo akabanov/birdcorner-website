@@ -1,4 +1,4 @@
-- group: Up and running
+- group: Free tools
   action: Open
   apps:
     - name: Domain Sonar
