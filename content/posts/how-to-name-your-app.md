@@ -8,9 +8,6 @@ Some approaches work even better for naming a business, a website, or a product.
 
 <!--more-->
 
-I'm writing this as a reminder to myself, 
-and I hope it'll help somebody else.
-
 > **Tip**: google your candidates before you get too attached to a particular name.
 >
 > Check the names against existing top-level domains.
@@ -77,7 +74,7 @@ Try this quirky
 [Game Studio name generator](https://alexvoelk.de/generators/game-studio/).
 You'll hardly find anything good, but at least you'll have a lot of fun and some rest.
 
-Remember checking the names in 
+Still remember to check the names in 
 [Domain Sonar](https://domainsonar.birdcorner.app/)?
 I'm mentioning this website for the second time because I made it. Just marketing, nothing personal.
 
@@ -97,11 +94,11 @@ Sink deeper into desperation.
 
 ## A real name
 
-Think about persons names. Or pet names.
-Or geographic names (yes, I know I already mentioned the lakes).
+Think about geographic locations. Or pet names. Or event persons names.
 If you think I'm joking, google Dave, Brigit, and Marcus apps.
 
-It might be a good choice for a helper, a coach, or a companion app (health, habits, language learning, finance assistant).
+It might be a good choice for a helper, a coach, or a companion app 
+(health, habits, language learning, finance assistant).
 But the trade-offs are uniqueness and searchability among some others.
 
 Tip: you’re not restricted to your native language or country.
@@ -154,5 +151,5 @@ And that's how I _~~met~~_ ended up with [Numerista](https://numerista.app/).
 
 ## Conclusion
 
-Please tell me in the comments if I missed some good approach here. This might help me and others save valuable time in the future.
-
+Please tell me in the comments if I missed some good approach here.
+A good advice may save a few hours for somebody.
