@@ -1,10 +1,10 @@
 ---
-title: "Designing App Icon for Devs"
+title: "Designing App Icon for Non-Designers"
 date: 2026-02-02
 ---
 
-You can find this useful if you are a tech person who doesn't have a background
-in graphic design. This is a simple process of designing an app icon
+Need to design a quality app icon without graphic design experience?
+Here is a simple process for you.
 
 <!--more-->
 
@@ -111,13 +111,19 @@ All this makes abstract **glyphs** the best candidates. As a rule of thumb:
 
 If you check your mobile home screen, each app icon most likely will be: *literal*, *metaphorical*, *symbolic*, or *decorative*. Talking about **decorative** icons is above my paygrade, I’m leaving it to brand and graphic designers.
 
+### Literal
+
 The easiest to come up with is the **literal** one. For a number memory app this would be an image of the brain and some numbers. This is a good choice for a school assignment or a calculator. In a production app it signals sloppiness: the developer couldn’t be bothered about the first thing the user interacts with. It gets in the way of building trust, because chances are there are other neglected areas in the app, such as proper user data protection.
+
+### Metaphor
 
 A better option is a **metaphor**. For Numerista it would be some animal known for its memory or craftyness or something related to memory techniques, like a peg. The problems are:
 
 - the metaphoric image is too complex considering the size/color constraints  
 - AI is currently not very good at producing complex vector images  
 - there’s a risk of ending up with a cliché
+
+### Symbolic
 
 The next level is **symbolic**, (think of the  where you distill your metaphorical image almost to the basic shape (think of The Bull by Pablo Picasso). Slight imperfections (rounded ends, small offsets) are often enough to avoid sterility.
 
