@@ -10,29 +10,6 @@ Here is a simple process for you.
 
 This article is about designing an icon for the [Numerista app](https://numerista.app/) that I’m building. The app is a practical daily system to develop numeric memory.
 
-## App description
-
-Write the app description as a **functional specification**:
-
-- Use plain language and short sentences.  
-- Describe what problem the app solves and how, not how it feels.  
-- Prefer systems, tools, and use cases over outcomes or promises.  
-- Avoid superlatives, emotional language, and claims of transformation.  
-- Assume the reader is intelligent, busy, and mildly skeptical.
-
-A good description should:
-
-- be understandable without screenshots,  
-- make the app sound reliable rather than exciting,  
-- remain accurate if reread months later.
-
-If a sentence could apply to many apps, remove it.
-
-A good app description can be used for [brainstorming your app name](https://birdcorner.app/posts/how-to-name-your-app/),
-drafting specifications,
-creating marketing materials (such as landing pages),
-and other purposes.
-
 ## What makes a good icon
 
 It's as simple as this:
