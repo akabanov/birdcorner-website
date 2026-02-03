@@ -131,6 +131,7 @@ and ask your favorite coding agent to do the job.
 > The original app icon is as follows:
 > 
 > ```svg
+> 
 > <svg width="512" height="512" viewBox="0 0 512 512"
 >  xmlns="http://www.w3.org/2000/svg">
 >   <defs>
@@ -166,6 +167,7 @@ and ask your favorite coding agent to do the job.
 >   <circle cx="317.2" cy="256" r="24" fill="#C6C9CD"/>
 >   <circle cx="389.2" cy="256" r="24" fill="#C6C9CD"/>
 > </svg>
+> 
 > ```
 > 
 > ### UI & Visual Aesthetics
